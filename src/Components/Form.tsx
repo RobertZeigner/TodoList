@@ -1,31 +1,31 @@
 import React from 'react';
 
-const Form = ({ setInputText, todo, setTodo, inputText, setStatus }: any) => {
+const Form = (props: any) => {
   const inputTextHandler = (e: any) => {
-    setInputText(e.target.value);
+    props.setInputText(e.target.value);
   };
 
   const submitTodoHandler = (e: any) => {
     e.preventDefault();
-    setTodo([
-      ...todo,
+    props.setTodo([
+      ...props.todo,
       {
-        text: inputText,
+        text: props.inputText,
         completed: false,
         id: Math.random() * 1000,
       },
     ]);
-    setInputText('');
+    props.setInputText('');
   };
 
   const statusHandler = (e: any) => {
-    setStatus(e.target.value);
+    props.setStatus(e.target.value);
   };
 
   return (
     <form>
       <input
-        value={inputText}
+        value={props.inputText}
         onChange={inputTextHandler}
         type='text'
         className='todo-input'

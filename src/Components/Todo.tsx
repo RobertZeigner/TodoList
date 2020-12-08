@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Todo = ({ text, setTodos, todos, todo }: any) => {
+const Todo = (props: any) => {
   const deleteHandler = () => {
-    setTodos(todos.filter((el: any) => el.id !== todo.id));
+    props.setTodos(props.todos.filter((el: any) => el.id !== props.todo.id));
   };
 
   const completeHandler = () => {
-    setTodos(
-      todos.map((item: any) => {
-        if (item.id === todo.id) {
+    props.setTodos(
+      props.todos.map((item: any) => {
+        if (item.id === props.todo.id) {
           return {
             ...item,
             completed: !item.completed,
@@ -21,8 +21,8 @@ const Todo = ({ text, setTodos, todos, todo }: any) => {
 
   return (
     <div className='todo'>
-      <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
-        {text}
+      <li className={`todo-item ${props.todo.completed ? 'completed' : ''}`}>
+        {props.text}
       </li>
       <button className='complete-btn' onClick={completeHandler}>
         <i className='fas fa-check'></i>
