@@ -1,0 +1,12 @@
+GET http://localhost:3000/todo HTTP/1.1
+
+###
+
+POST http://localhost:3000/todo HTTP/1.1
+content-Type: application/json
+
+{
+    "todo_name": "Excercise",
+    "completed": true,
+    "id": 3
+}

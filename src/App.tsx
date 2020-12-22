@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
 
 import './App.css';
 import Form from './Components/Form';
@@ -24,24 +25,13 @@ function App() {
           break;
       }
     };
-
-    // const saveLocalTodos = () => {
-    //   localStorage.setItem('todos', JSON.stringify(todos));
-    // };
     filterHandler();
-    // saveLocalTodos();
   }, [todos, status]);
 
   // useEffect(() => {
-  //   const getLocalTodos = () => {
-  //     if (localStorage.getItem('todos') === null) {
-  //       localStorage.setItem('todos', JSON.stringify([]));
-  //     } else {
-  //       //  Error
-  //       setTodos(JSON.parse(localStorage.getItem('todos')));
-  //     }
-  //   };
-  //   getLocalTodos();
+  //   axios.get('http://localhost:3000/todo').then((res) => {
+  //     setTodos(res.data);
+  //   });
   // }, []);
 
   return (

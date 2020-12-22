@@ -1,8 +1,13 @@
 import React from 'react';
+// import axios from 'axios';
 
 const Todo = (props: any) => {
   const deleteHandler = () => {
     props.setTodos(props.todos.filter((el: any) => el.id !== props.todo.id));
+
+    // axios.delete('http://localhost:3000/todo', props.todos).then((res) => {
+    //   console.log(res);
+    // });
   };
 
   const completeHandler = () => {
